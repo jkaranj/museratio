@@ -1,6 +1,9 @@
 :root {
   --text: rgba(254, 245, 236, 1);
 }
+body {
+  scroll-behavior: smooth;
+}
 /* .animate-text-bg-1  bar behind text */
 /* .animate-bg-button  half bg button animated */
 * {
@@ -79,7 +82,8 @@
   background-image: linear-gradient(
     to bottom,
     rgba(0, 0, 0, 0.7),
-    rgba(16, 37, 34, 0.9)
+    rgba(16, 37, 34, 0.7),
+    rgba(16, 37, 34, 0.99)
   );
 }
 #hero {
@@ -152,20 +156,21 @@
 .hero-head-highlight-1:before {
   content: " ";
   background-color: rgba(179, 45, 28, 0.61);
+  /* left: -3%; */
   height: 30px;
-  width: 100%;
+  /* width: 106%; */
   border-radius: 10px;
 }
 .hero-head-highlight-2:before {
   content: " ";
   background-color: rgba(237, 158, 79, 0.61);
   height: 30px;
-  width: 80%;
+  /* width: 106%; */
   border-radius: 10px;
 }
 .hero-head-highlight-2:hover:before {
   top: 60%;
-  left: 10%;
+  /* left: 10%; */
   moz-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
   -webkit-transition: all 0.3s ease-in-out;
@@ -183,11 +188,12 @@
   /* height: 2.5rem; */
   border-radius: 10px;
   background: none;
-  background-image: linear-gradient(
+  /* background-image: linear-gradient(
     to right,
     rgba(15, 65, 10, 0.61),
     rgba(8, 84, 61, 0.61)
-  );
+  ); */
+  background-image: linear-gradient(to right, #08543d, #188479, #08543d);
   color: var(--text);
   font-size: 1.3em;
   padding: 10px;
@@ -200,6 +206,7 @@
   transition: all 0.4s ease-in-out;
 }
 .cta button:hover {
+  /* background-image: linear-gradient(to right, #08543d, #188479); */
   background-position: 100% 0;
   moz-transition: all 0.4s ease-in-out;
   -o-transition: all 0.4s ease-in-out;
@@ -221,6 +228,7 @@
     rgba(94, 156, 87, 0.61),
     rgba(8, 84, 61, 0.61)
   );
+  font-family: "Comfortaa", cursive;
 }
 .animate-bg-button {
   background-repeat: no-repeat;
@@ -277,7 +285,7 @@ footer {
   position: relative;
   background-color: rgba(108, 99, 255, 1);
   height: 20px;
-  width: 100%;
+  /* width: 100%; */
   border-radius: 5px;
 }
 .about-small-cont {
@@ -286,9 +294,66 @@ footer {
   padding-top: 5%;
   padding-bottom: 10%;
   font-family: "Raleway", sans-serif;
+  font-weight: 200;
+  font-size: 1.3rem;
+  line-height: 1.8rem;
+}
+.services-list {
+  position: relative;
+  padding-top: 4%;
+  padding-left: 10%;
+  padding-bottom: 2%;
+  color: aliceblue;
+}
+.services-list h3 {
+  font-family: "Raleway", sans-serif;
   font-weight: 300;
-  font-size: 1.5rem;
-  line-height: 2rem;
+  font-size: 1.3rem;
+  line-height: 1.8rem;
+}
+.branding-drop-down,
+.Web-design-drop-down {
+  position: relative;
+  z-index: 2;
+  /* background-color: blue; */
+}
+/* .branding-drop-down::before {
+  content: "";
+
+  background-color: azure;  
+} */
+.branding-drop-down:before {
+  content: "";
+  position: absolute;
+  background-color: rgba(108, 99, 255, 1);
+  height: 10px;
+  width: 110%;
+  border-radius: 2px;
+}
+.Web-design-drop-down:before {
+  content: "";
+  position: absolute;
+  background-color: rgb(12, 80, 10);
+  height: 10px;
+  width: 110%;
+  border-radius: 2px;
+}
+.Web-design-drop-down:hover:before {
+  content: "Test Content Test Content  Test Content  Test Content  Test Content  Test Content Test Content Test Content  ";
+  padding-top: 10px;
+  padding-left: 20px;
+  height: 200px;
+  width: 60vw;
+}
+.branding-drop-down:hover:before {
+  content: "Test Content Test Content  Test Content  Test Content  Test Content  Test Content Test Content Test Content  ";
+  padding-top: 10px;
+  padding-left: 20px;
+  height: 200px;
+  width: 60vw;
+}
+.branding-drop-down:hover:before .Web-design-drop-down {
+  padding-top: 200px;
 }
 @media only screen and (max-width: 768px) {
   /* For mobile phones: */
@@ -305,8 +370,9 @@ footer {
   position: absolute;
   top: 50%;
   bottom: 0;
-  left: 0;
-  right: 0;
+  width: 106%;
+  left: -3%;
+  /* right: 0; */
   z-index: -1;
   moz-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
@@ -314,10 +380,74 @@ footer {
   transition: all 0.3s ease-in-out;
 }
 .animate-text-bg-1:hover::before {
-  top: 55%;
-  left: 5%;
+  top: 60%;
+  /* left: 5%; */
   moz-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
+}
+/* delete the code after this */
+#our-services {
+  height: 300px;
+}
+.projects {
+  display: flex;
+  height: 300vh;
+}
+.projects-title {
+  width: 50vw;
+  height: 300vh;
+}
+
+.projects-title p {
+  color: white;
+  font-family: "Raleway", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 900;
+  margin-left: 30%;
+  margin-top: 50%;
+  position: sticky;
+  top: 50vh;
+}
+/* .projects div:nth-child(1) {
+  content: "";
+  width: 50%;
+  height: 100vh;
+  background-image: url(./media/Cups.png);
+  background-repeat: no-repeat;
+} */
+.p-images {
+  width: 50%;
+  height: 300vh;
+  padding: 0;
+  margin: 0;
+}
+.p-images img {
+  height: 100vh;
+  width: auto;
+}
+.p-img:nth-child(1) {
+  height: 100vh;
+  background-image: url(./media/Cups.png);
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  background-position: center;
+  /* background: rgba(108, 99, 255, 1); */
+}
+.p-img:nth-child(2) {
+  height: 100vh;
+  background-image: url(./media/JGM_UI.png);
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  background-position: center;
+  /* background: rgba(108, 99, 255, 1); */
+}
+.p-img:nth-child(3) {
+  height: 100vh;
+  background-image: url(./media/Render.png);
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  background-position: center;
+  /* background: rgba(108, 99, 255, 1); */
 }
